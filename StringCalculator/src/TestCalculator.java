@@ -28,4 +28,15 @@ public class TestCalculator {
 	{
 		assertEquals(calculator.calculate("1,2"),3 );
 	}
+	@Test
+	public void twoNumberNewLineDelimitedReturnSum()
+	{
+		assertEquals(calculator.calculate("1\n2"),3 );
+	}
+	@Test
+	public void threeNumbersDemilitedBothwaysreturnSum()
+	{
+		assertEquals(calculator.calculate("1,2,3"),6 );
+		
+	}
 }
