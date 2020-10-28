@@ -44,4 +44,10 @@ public class TestCalculator {
 	{
 		calculator.calculate("-1");
 	}
+	@Test
+	public void ignoreNumbersfreaterThanThousand() throws Exception
+	{
+		assertEquals(calculator.calculate("10,10,1001"),20 );
+		
+	}
 }

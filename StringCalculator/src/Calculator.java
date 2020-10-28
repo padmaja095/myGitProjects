@@ -27,6 +27,10 @@ public class Calculator {
 		int sum=0;
 		for(String  i:numbers)
 		{
+			if(stringToInt(i)>1000)
+			{
+			   continue;
+			}
 			sum+=stringToInt(i);
 		}
 		return sum;
