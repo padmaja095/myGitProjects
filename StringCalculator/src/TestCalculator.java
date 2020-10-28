@@ -13,30 +13,35 @@ public class TestCalculator {
 	}
 	
 	@Test
-	public void emptyStringResturnsZero()
+	public void emptyStringResturnsZero() throws Exception
 	{
 		
 		assertEquals(calculator.calculate(""),0 );
 	}
 	@Test
-	public void singleValueIsReplied()
+	public void singleValueIsReplied() throws Exception
 	{
 		assertEquals(calculator.calculate("1"),1 );
 	}
 	@Test
-	public void twoNumbersDelimitedReturnSum()
+	public void twoNumbersDelimitedReturnSum() throws Exception
 	{
 		assertEquals(calculator.calculate("1,2"),3 );
 	}
 	@Test
-	public void twoNumberNewLineDelimitedReturnSum()
+	public void twoNumberNewLineDelimitedReturnSum() throws Exception
 	{
 		assertEquals(calculator.calculate("1\n2"),3 );
 	}
 	@Test
-	public void threeNumbersDemilitedBothwaysreturnSum()
+	public void threeNumbersDemilitedBothwaysreturnSum() throws Exception
 	{
 		assertEquals(calculator.calculate("1,2,3"),6 );
 		
+	}
+	@Test(expected=Exception.class)
+	public void negativeInputReturnsException() throws Exception
+	{
+		calculator.calculate("-1");
 	}
 }

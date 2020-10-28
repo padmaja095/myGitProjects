@@ -3,7 +3,7 @@ public class Calculator {
 
 	
 	private final String demiliter=",|\n";
-	public int calculate(String input) {
+	public int calculate(String input) throws Exception {
 		String[] numbers=input.split(demiliter);
 		if(isEmpty(input))
 		{
@@ -21,16 +21,29 @@ public class Calculator {
 	}
 	
 	
-	private int getSum(String[] numbers)
+	private int getSum(String[] numbers) throws Exception
 	{
+		fireException(numbers);
 		int sum=0;
-		for(int i=0;i<numbers.length;i++)
+		for(String  i:numbers)
 		{
-			sum+=Integer.parseInt(numbers[i]);
+			sum+=stringToInt(i);
 		}
 		return sum;
 		
 		}
+	
+	
+	private void fireException(String[] numbers) throws Exception
+	{
+		for(String  i:numbers)
+		{
+			if(stringToInt(i)<0)
+			{
+				throw new Exception("Negative Input");
+			}
+		}
+	}
 		
 		
 	
